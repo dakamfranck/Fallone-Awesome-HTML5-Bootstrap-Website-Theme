@@ -1,0 +1,347 @@
+/* 
+  Created on : Apr 23, 2015, 1:08:34 PM
+  Author     : Dakam Franck <fdakam@gmail.com>
+  Product    : Fallone - Bootstrap Html5 Template
+*/
+
+@import 'mixins.less';
+
+/* tablet, portrait & smartphones, landscape */
+@media only screen and (max-width: 1023px) {
+  .slider-inner{
+    h1{
+      font-size: ceil(@font-size-h1 * .6);
+    }
+    h2{
+      font-size: ceil(@font-size-h2 * .6);
+    }
+    h3{
+      font-size: ceil(@font-size-h3 * .6);
+    }
+    h4{
+      font-size: ceil(@font-size-h4 * .6);
+    }
+    h5{
+      font-size: ceil(@font-size-h5 * .6);
+    }
+    h6{
+      font-size: ceil(@font-size-h6 * .6);
+    }
+  }
+  .slider-content,
+  section{
+    .inner {
+      top: 0;
+    }
+  }
+  #main-carousel{
+    margin-left: 0;
+  }
+  .side-nav{
+    border-radius: 0;
+    height: 100%;
+    left: 0;
+    .scale(1.15, 1);
+    visibility: hidden;
+    .opacity(0.0);
+    .transition(all 0.3s);
+    z-index: -1;
+    a.logo {
+      padding:7em 7% 7% 7%;
+      width: 40em;
+      max-width: 384px;
+      span.icon {
+        visibility: visible;
+        .opacity(1.0);
+        font-size: 3.5em;
+        bottom: auto;
+        top: 2em;
+        right: -0.8em;
+      }
+      span.subbrand-container {
+        left: 0;
+        bottom: 0;
+        position: relative;
+      }
+    }
+    ul.subbrand-list {
+      top: 13em;
+      a {
+        padding: 0.5em 7%;
+      }
+    }
+    .subbrand-container {
+      font-size: 2.3em;
+    }
+    .main-navigation{
+      ul {
+        li {
+          a.link {
+            padding:0 7%;
+          }
+        }
+      }
+    } 
+    .secondary-navigation {
+      left: 7%;
+      width: 86%;
+      padding:0 0 7% 0;
+    }
+  } 
+  .nav-expanded{
+    .side-nav {
+      .scale(1.0, 1);
+      visibility: visible;
+      opacity: 1.0;
+      z-index: 10;
+    }
+    &.subnav-active{
+      .side-nav {
+        .translateX(85%);
+      }
+    } 
+    div.main-content {
+      .tranform-scale-translateY(0.85, 4em);
+    }
+    a.nav-expander{
+      span {
+        display: block;
+        height: 3px;
+        border-radius:2px;
+        background-color: @white;
+        width:3.5em;
+        margin:5px 0;
+        .transition(all 0.2s);
+      }
+      span:nth-child(2) {
+        opacity: 0.0;
+      }
+      span:nth-child(1) {
+        .tranform-rotate-translateY-tranlateX(-45deg, 0.5em, -0.5em);
+      }
+      span:nth-child(3) {
+        .tranform-rotate-translateY-tranlateX(45deg, -0.4em, -0.4em);
+      }
+    } 
+  } 
+  section.feature{ 
+    h1 {
+      margin-bottom: 0.1em;
+    }
+  }
+  section.subnav{
+    div.inner {
+      margin-right: 22%;
+    }
+    .storetypes{
+      ul{
+        overflow: hidden;
+        margin-bottom: 3em;
+        li {
+          width: 100%;
+          a {
+            padding: 1.3em 0;
+          }
+        }
+      }
+      h3 {
+        margin:2.5em 0 0.5em 0;
+      }
+    } 
+    .category-menu{
+      ul{
+        overflow: hidden;
+        margin-bottom: 3em;
+        li {
+          width: 100%;
+          margin-bottom: 2em;
+          a {
+            padding: 1.3em 0;
+          }
+        }
+      }
+      h3 {
+        margin:2.5em 0 0.5em 0;
+        font-size: 3em;
+      }
+    } 
+  } 
+  div.main-content {
+    .transition-transform(0.3s);
+  }
+  a.nav-expander {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    padding:1em;
+    margin-left: -.6em;
+    margin-top: 14px;
+    left: 7%;
+    .border-right-radius(150px 35px);
+    .border-left-radius(150px 35px);
+    .border-bottom-radius(150px 35px);
+    .border-bottom-radius(150px 35px);
+    background-color: @brand-primary;
+    color: @white; 
+    span {
+      display: block;
+      height: 3px;
+      border-radius:2px;
+      background-color: @white;
+      width:2.5em;
+      margin:5px 0;
+    }
+  }
+  section:first-child {
+    padding-top: 4em;
+  }
+  section > .inner, footer > .inner, .slider-content .inner {
+    margin: 0 7%;
+  }
+  section.feature {
+    min-height: 40em;
+  }
+
+  .typeloop-prev {
+    left: 0;
+  }
+  div.details > .inner {
+    margin: 0;
+    width: 100%;
+  }
+
+  p{
+    font-weight: 400;
+  }
+
+.footer-widget{
+  min-height: 400px;
+}
+}
+@media (max-width: 568px) {
+  .col-3-gallery{
+    .gallery-item {
+      width: 100%;
+      padding: 15px;
+    }
+  } 
+  .dropdown-menu {
+    top: 0;
+    left: 127px;
+  }
+  /** Pull left xs **/
+  .pull-left-xs {
+    float: left;
+  }
+
+  /** Pull right xs **/
+  .pull-right-xs {
+    float: right;
+  }
+  .first-posts{
+    margin-right: 0;
+  }
+  .second-posts{
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) { 
+  .carousel-caption{
+    bottom: 50px;
+    .caption-head{
+      font-size: ceil(@font-size-h1 * .9) !important;
+    }
+    .h3{
+      font-size: ceil(@font-size-h3 * .7) !important;
+    }
+    .btn{
+      .animation-delay(2s);
+    }
+  }
+  .col-3-gallery{
+    .gallery-item {
+      width: 50%;
+      padding: 15px;
+    }
+  }
+  ul.blog-post {
+    width: 280px;
+  }
+  .side-nav{
+    top: 0;
+    a.logo{
+      span.overall-logo{
+        width: 100px;
+      }
+    }
+  }
+  ul.breadcrumb{
+    font-size: .8em;
+    li{
+      margin: 0 .4em 0 0;
+      padding: 0 1em 0 0;
+    }
+  }
+  section:first-child {
+    padding-top: 0;
+  }
+  .header-tree {
+    padding-top: 0;
+    min-height: 0;
+    .inner{
+      height: 25px;
+      margin: 25px 0.5% 30px 26.5%;
+    }
+  }
+  .carousel-indicators{
+    bottom: -15px;
+  }
+  .slider-content{
+    .carousel{
+      min-height: 350px;
+    }
+  }
+  footer, 
+  .slider-content, 
+  section{
+    padding: 50px 0;
+    .slider-inner{
+      margin: 30px 7.5%;
+    }
+  }
+  .md-notebook{
+    width: 38.3125rem;
+  }
+  /** Pull left sm **/
+  .pull-left-sm {
+    float: left;
+  }
+
+  /** Pull right sm **/
+  .pull-right-sm {
+    float: right;
+  }
+  .second-posts{
+    h5,
+    h2{
+      right: 20px;
+    }
+  }
+  .footer-widget{
+    min-height: auto;
+  }
+  #login{
+    position: relative;
+    left: auto;
+  }
+}
+@media (min-width: 1170px) and (max-width: 1750px){
+  .col-custom-offset{
+    margin-left: 25%;
+    width: 75%;
+  }
+  .footer-widget{
+    min-height: 400px;
+  }
+}

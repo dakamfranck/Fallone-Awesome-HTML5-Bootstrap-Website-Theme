@@ -1,0 +1,291 @@
+/* 
+  Created on : June 29, 2015, 12:02:34 PM
+  Author     : Dakam Franck <fdakam@gmail.com>
+  Product    : Fallone - Bootstrap HTML5 Template
+*/
+
+@url_image: '../images';
+@url_image_media: '../images/media';
+@url_image_backgrounds: '../images/backgrounds';
+@url_image_products: '../images/products';
+//Colors
+@brand-primary: #1fA3FF;
+@brand-success: #16CC53;
+@brand-info:    #61C2FF;
+@brand-warning: #FFE07A;
+@brand-danger:  #D9534F;
+@white:         #FFFFFF;
+@black:         #000;
+@gray-darker:   lighten(@black, 13.5%); // #222
+@gray-dark:     lighten(@black, 20%);   // #333
+@gray:          lighten(@black, 33.5%); // #555
+@gray-light:    lighten(@black, 46.7%); // #777
+@gray-lighter:  lighten(@black, 93.5%); // #eee
+
+@font-family-base:        'Lato', sans-serif;
+@font-family-head:        'Allerta Stencil', Helvetica, sans-serif;
+@font-size-base:          14px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+.hypens(@hyp){
+  -webkit-hypens: @hyp;
+  -moz-hypens: @hyp;
+  -ms-hypens: @hyp;
+  -o-hypens: @hyp;
+  hypens: @hyp;
+}
+.appearance(@sta){
+  -webkit-appearance: @sta;
+  -moz-appearance: @sta;
+  -ms-appearance: @sta;
+  -o-appearance: @sta;
+  appearance: @sta;
+}
+.box-sizing(@box-model) {
+  -webkit-box-sizing: @box-model; // Safari <= 5
+  -moz-box-sizing: @box-model; // Firefox <= 19
+  box-sizing: @box-model;
+}
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+  -webkit-border-top-right-radius: @radius;
+  -webkit-border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+  border-top-right-radius: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+  -webkit-border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+  border-bottom-left-radius: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+  -webkit-border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+  border-top-left-radius: @radius;
+  -webkit-border-bottom-left-radius: @radius;
+  -webkit-border-top-left-radius: @radius;
+}
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+  box-shadow: @shadow;
+}
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -ms-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+.transition-property(@transition-property) {
+  -webkit-transition-property: @transition-property;
+  transition-property: @transition-property;
+}
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+  transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+  transition-duration: @transition-duration;
+}
+.transition-timing-function(@timing-function) {
+  -webkit-transition-timing-function: @timing-function;
+  transition-timing-function: @timing-function;
+}
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+  -moz-transition: -moz-transform @transition;
+  -o-transition: -o-transform @transition;
+  transition: transform @transition;
+}
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees); // IE9 only
+  transform: rotate(@degrees);
+}
+.scale(@ratio, @ratio-y) {
+  -webkit-transform: scale(@ratio, @ratio-y);
+  -ms-transform: scale(@ratio, @ratio-y); // IE9 only
+  transform: scale(@ratio, @ratio-y);
+}
+.translate(@x, @y) {
+  -webkit-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y); // IE9 only
+  transform: translate(@x, @y);
+}
+.translateY(@y){
+  -webkit-transform:translateY(@y);
+  -moz-transform:translateY(@y);
+  -ms-transform:translateY(@y);
+  -o-transform:translateY(@y);
+  transform:translateY(@y);
+}
+.translateX(@x){
+  -webkit-transform:translateX(@x);
+  -moz-transform:translateX(@x);
+  -ms-transform:translateX(@x);
+  -o-transform:translateX(@x);
+  transform:translateX(@x);
+}
+.skew(@x, @y) {
+  -webkit-transform: skew(@x, @y);
+  -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+  transform: skew(@x, @y);
+}
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+  transform: translate3d(@x, @y, @z);
+}
+
+.rotateX(@degrees) {
+  -webkit-transform: rotateX(@degrees);
+  -ms-transform: rotateX(@degrees); // IE9 only
+  transform: rotateX(@degrees);
+}
+.rotateY(@degrees) {
+  -webkit-transform: rotateY(@degrees);
+  -ms-transform: rotateY(@degrees); // IE9 only
+  transform: rotateY(@degrees);
+}
+.perspective(@perspective) {
+  -webkit-perspective: @perspective;
+  -moz-perspective: @perspective;
+  perspective: @perspective;
+}
+.perspective-origin(@perspective) {
+  -webkit-perspective-origin: @perspective;
+  -moz-perspective-origin: @perspective;
+  perspective-origin: @perspective;
+}
+.transform-origin(@origin) {
+  -webkit-transform-origin: @origin;
+  -moz-transform-origin: @origin;
+  -ms-transform-origin: @origin; // IE9 only
+  transform-origin: @origin;
+}
+.animation(@animation) {
+  -webkit-animation: @animation;
+  animation: @animation;
+}
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+  animation-name: @name;
+}
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+  animation-duration: @duration;
+}
+.animation-timing-function(@timing-function) {
+  -webkit-animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
+}
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+  animation-delay: @delay;
+}
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+  animation-iteration-count: @iteration-count;
+}
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+  animation-direction: @direction;
+}
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+.content-columns(@width, @count, @gap) {
+  -webkit-column-width: @width;
+  -moz-column-width: @width;
+  column-width: @width;
+  -webkit-column-count: @count;
+  -moz-column-count: @count;
+  column-count: @count;
+  -webkit-column-gap: @gap;
+  -moz-column-gap: @gap;
+  column-gap: @gap;
+}
+// Mixin
+.clearfix() {
+  &:before,
+    &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.blur(@px){
+	-webkit-filter:blur(@px);
+	-moz-filter:blur(@px);
+	-ms-filter:blur(@px);
+	-o-filter:blur(@px);
+	filter:blur(@px);
+}
+.backface-visibility(@state){
+	-webkit-backface-visibility:@state;
+	-moz-backface-visibility:@state;
+	-ms-backface-visibility:@state;
+	-o-backface-visibility:@state;
+	backface-visibility:@state;
+}
+
+.tranform-scale-translateY(@scale, @translateY){
+  -webkit-transform:scale(@scale) translateY(@translateY);
+  -moz-transform:scale(@scale) translateY(@translateY);
+  -ms-transform:scale(@scale) translateY(@translateY);
+  -o-transform:scale(@scale) translateY(@translateY);
+  transform:scale(@scale) translateY(@translateY);
+}
+
+.tranform-rotate-translateY-tranlateX(@rotate, @translateY, @translateX){
+  -webkit-transform:rotate(@rotate) translateY(@translateY) translateX(@translateX);
+  -moz-transform:rotate(@rotate) translateY(@translateY) translateX(@translateX);
+  -ms-transform:rotate(@rotate) translateY(@translateY) translateX(@translateX);
+  -o-transform:rotate(@rotate) translateY(@translateY) translateX(@translateX);
+  transform:rotate(@rotate) translateY(@translateY) translateX(@translateX);
+}
+// Mixin
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+// Mixins
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+.square(@size) {
+  .size(@size, @size);
+}
+.resizable(@direction: both) {
+  // Options: horizontal, vertical, both
+  resize: @direction;
+  // Safari fix
+  overflow: auto;
+}
+// Mixin
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
