@@ -18,8 +18,8 @@ fallone = {
     this.dropdownMenuOnHover();
   },
   dropdownMenuOnHover: function () {
-
-    $(".dropdown").hover(
+    if($(window).width() > 568){
+      $(".dropdown").hover(
             function () {
               $('.dropdown-menu', this).stop(true, true).fadeIn("slow");
               $(this).toggleClass('open');
@@ -38,6 +38,7 @@ fallone = {
                 $('.dropdown-menu', t).removeClass('fadetop');
               }, 200);
             });
+      }
   },
   sizeGestion: function () {
     if ($(window).width() > 1750) {
@@ -83,7 +84,7 @@ fallone = {
   },
   backToTop: function () {
     $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
+      if ($(this).scrollTop() > 100 && $(window).width() > 568) {
         if (fallone.sticky_visible === false) {
           //$('.fallone-navbar nav').addClass('navbar-fixed-top');
           $('.fallone-navbar').addClass('header-stuck');
@@ -182,7 +183,7 @@ fallone = {
       });
       fallone.doAnimations($firstAnimatingElems);
       $mainCarousel.carousel('pause');
-      //Other slides to be animated on carousel slide event 
+      //Other slides to be animated on carousel slide event
       $mainCarousel.on('slide.bs.carousel', function (e) {
         var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
         fallone.doAnimations($animatingElems);
@@ -195,7 +196,7 @@ fallone = {
           autoPlay: true,
           stopOnHover: true,
           singleItem: true,
-          // Responsive 
+          // Responsive
           responsive: true,
           responsiveRefreshRate: 200
         });
@@ -214,7 +215,7 @@ fallone = {
           autoPlay: true,
           stopOnHover: true,
           singleItem: false,
-          // Responsive 
+          // Responsive
           responsive: true,
           responsiveRefreshRate: 200
         });
@@ -230,7 +231,7 @@ fallone = {
               $animationType = $this.data('animation');
 
       // Add animate.css classes to
-      // the elements to be animated 
+      // the elements to be animated
       // Remove animate.css classes
       // once the animation event has ended
       $this.addClass($animationType).one(animEndEv, function () {
@@ -328,7 +329,7 @@ fallone = {
           return false;
         });
 
-        // Isotope Filter 
+        // Isotope Filter
         $filter.find('a').click(function () {
           var selector = $(this).attr('data-filter');
 
@@ -370,5 +371,3 @@ fallone = {
 
 };
 fallone.init();
-
-

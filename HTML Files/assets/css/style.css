@@ -1,5 +1,10 @@
-/* 
+/*
   Created on : June 29, 2015, 12:02:34 PM
+  Author     : Dakam Franck <fdakam@gmail.com>
+  Product    : Fallone - Bootstrap HTML5 Template
+*/
+/*
+  Updated on : June 29, 2016, 12:02:34 PM
   Author     : Dakam Franck <fdakam@gmail.com>
   Product    : Fallone - Bootstrap HTML5 Template
 */
@@ -948,6 +953,28 @@ header.expanded nav {
   width: auto;
   margin: auto;
   max-height: 100px;
+}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 28px;
+    margin-right: 25px;
+    margin-bottom: 8px;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ddd;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover{
+  background-color: #000;
+}
+.navbar-default .navbar-toggle {
+    border-color: #000;
 }
 a.link.cta {
   color: #16cc53;

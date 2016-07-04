@@ -1,10 +1,10 @@
-/* 
+/*
   Created on : Apr 23, 2015, 1:08:34 PM
   Author     : Dakam Franck <fdakam@gmail.com>
   Product    : Fallone - Bootstrap Html5 Template
 */
-/* 
-  Created on : June 29, 2015, 12:02:34 PM
+/*
+  Updated on : June 29, 2016, 12:02:34 PM
   Author     : Dakam Franck <fdakam@gmail.com>
   Product    : Fallone - Bootstrap HTML5 Template
 */
@@ -240,7 +240,7 @@
   }
   .dropdown-menu {
     top: 0;
-    left: 127px;
+    left: 0;
   }
   /** Pull left xs **/
   .pull-left-xs {
@@ -255,6 +255,20 @@
   }
   .second-posts {
     margin-left: 0;
+  }
+  .navbar-default ul li a{
+    padding: 20px;
+  }
+  .navbar-default .dropdown-menu {
+    max-height: 130px;
+    overflow-y: scroll;
+  }
+  .navbar-nav .open .dropdown-menu {
+    position: relative;
+    background-color: #000;
+  }
+  .navbar-brand {
+    margin-left: 20px;
   }
 }
 @media (max-width: 768px) {
